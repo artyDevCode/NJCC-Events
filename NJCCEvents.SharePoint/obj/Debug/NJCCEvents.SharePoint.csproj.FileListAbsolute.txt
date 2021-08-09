@@ -1,0 +1,8 @@
+C:\Projects\TFSWorkspace\NJCC Events\NJCCEvents\NJCCEvents.SharePoint\bin\Debug\NJCCEvents.SharePoint.dll.config
+C:\Projects\TFSWorkspace\NJCC Events\NJCCEvents\NJCCEvents.SharePoint\bin\Debug\NJCCEvents.SharePoint.pdb
+C:\Projects\TFSWorkspace\NJCC Events\NJCCEvents\NJCCEvents.SharePoint\obj\Debug\NJCCEvents.SharePoint.dll
+C:\Projects\TFSWorkspace\NJCC Events\NJCCEvents\NJCCEvents.SharePoint\obj\Debug\NJCCEvents.SharePoint.pdb
+C:\C#Development\Projects\NJCC Events\NJCCEvents\NJCCEvents.SharePoint\bin\Debug\NJCCEvents.SharePoint.dll.config
+C:\C#Development\Projects\NJCC Events\NJCCEvents\NJCCEvents.SharePoint\bin\Debug\NJCCEvents.SharePoint.pdb
+C:\C#Development\Projects\NJCC Events\NJCCEvents\NJCCEvents.SharePoint\obj\Debug\NJCCEvents.SharePoint.dll
+C:\C#Development\Projects\NJCC Events\NJCCEvents\NJCCEvents.SharePoint\obj\Debug\NJCCEvents.SharePoint.pdb

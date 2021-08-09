@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="957815ea-6e16-406e-81ee-b8f2416ec138" SharePointProductVersion="15.0">
+  <FeatureManifests>
+    <FeatureManifest Location="NJCCEvents.SharePoint_Feature1\Feature.xml" />
+  </FeatureManifests>
+</Solution>

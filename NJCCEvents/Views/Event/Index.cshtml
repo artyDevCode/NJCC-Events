@@ -1,0 +1,106 @@
+﻿@model IEnumerable<NJCCEvents.Models.EventDocument>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create" , new { SPHostUrl = SharePointContext.GetSPHostUrl(HttpContext.Current.Request).AbsoluteUri }, null)
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumOfPeople)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StaffContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TargetAudience)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Feedback)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attachments)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDateTime)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumOfPeople)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StaffContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TargetAudience)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Feedback)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Attachments)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id , SPHostUrl = SharePointContext.GetSPHostUrl(HttpContext.Current.Request).AbsoluteUri }, null) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id , SPHostUrl = SharePointContext.GetSPHostUrl(HttpContext.Current.Request).AbsoluteUri }, null) |
+            @if (ViewData["InOwnerRole"] == "true")
+            {
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id , SPHostUrl = SharePointContext.GetSPHostUrl(HttpContext.Current.Request).AbsoluteUri }, null)
+            }
+        </td>
+    </tr>
+}
+
+</table>

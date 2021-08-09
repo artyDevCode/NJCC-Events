@@ -1,0 +1,411 @@
+﻿@model NJCCEvents.Models.EventDocument
+
+
+<p>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id, SPHostUrl = SharePointContext.GetSPHostUrl(HttpContext.Current.Request).AbsoluteUri }, new { @class = "btn btn-primary" })
+    </div>
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.Organisation)
+  
+    @*<table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; float: left; font-size: 10pt; background-color: whitesmoke; width: auto; height: 100%; ">
+        <tr style="background-color: threeddarkshadow; color: white;"><th align="center" class="auto-style19"><b>Event Date and Duration</b></th></tr>
+        <tr>
+            <td class="auto-style12">
+                <table border="0" style="font-family: Arial; font-size: 10pt; width: auto; background-color: whitesmoke; float: left" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="left" nowrap class="auto-style5">
+                                Start Date:
+                            </td>                 
+                        <td align="left">
+                            @Html.ShortDate(Model.StartDateTime, "SDate", false)
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: threedlightshadow;" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="left" nowrap class="auto-style5">
+                            End Date:
+                        </td>
+
+                        <td align="left">
+                            @Html.ShortDate(Model.EndDateTime, "EDate", false)
+                        </td>
+                    </tr>
+
+                </table>
+                <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: whitesmoke;" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="left" nowrap class="auto-style5">
+                            Start Time:
+                        </td>
+
+                        <td align="left">
+                            @Html.ShortTime(Model.StartDateTime, "STime", false)
+                        </td>
+                    </tr>
+
+                </table>
+                <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: threedlightshadow;" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="left" nowrap class="auto-style5">
+                            End Time:
+                        </td>
+
+                        <td align="left">
+                            @Html.ShortTime(Model.EndDateTime, "ETime", false)
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+
+        </tr>
+    </table>
+  
+    <td class="auto-style17">
+        <table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; float: right; font-size: 10pt; background-color: whitesmoke; width: auto; height: 100%; ">
+            <tr style="background-color: threeddarkshadow; color: white; "><th align="center" class="auto-style19"><b>Summary</b></th></tr>
+            <tr>
+                <td class="auto-style12">
+                    <table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; font-size: 10pt; background-color:whitesmoke; width:auto; ">
+                        <tr style="background-color: lightgoldenrodyellow; color: black">
+                            <th class="auto-style20">Start</th>
+                            <th class="auto-style20">End</th>
+                            <th class="auto-style21">Description</th>
+                        </tr>
+                        <tr>
+                            <td>@Html.ShortTime(Model.StartDateTime, "STime1", false)                   </td>
+                            <td>@Html.ShortTime(Model.EndDateTime, "ETime1", false)                    </td>
+                            <td>@Html.DisplayFor(model => model.EventName) ----- @Html.DisplayFor(model => model.Aim)                  </td>
+                        </tr>
+                    </table>
+            </tr>
+        </table>
+    </td>*@
+     <table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; float: left; font-size: 10pt; background-color: whitesmoke; width: auto; height: 100%; ">
+        <tr style="background-color: threeddarkshadow; color: white;"><th align="center" class="auto-style19"><b>Event Date and Duration</b></th></tr>
+        <tr>
+            <td class="auto-style12">
+                <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: whitesmoke; float: left" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="left" nowrap class="auto-style5">
+                            @Html.DisplayNameFor(model => model.StartDateTime):
+                        </td>
+
+                        <td align="left">
+                            @Html.ShortDate(Model.StartDateTime, "StartDate", false)
+                            @*@Html.ValidationMessageFor(model => model.StartDateTime)*@
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: threedlightshadow;" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="left" nowrap class="auto-style5">
+                            @Html.DisplayNameFor(model => model.EndDateTime):
+                        </td>
+
+                        <td align="left">
+                            @Html.ShortDate(Model.EndDateTime, "EndDate", false)
+                            @*@Html.ValidationMessageFor(model => model.EndDateTime)*@
+                        </td>
+                    </tr>
+
+                </table>
+                <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: whitesmoke;" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="left" nowrap class="auto-style5">
+                            Start Time:
+                        </td>
+
+                        <td align="left">
+                            @Html.ShortTime(Model.StartDateTime, "StartTime", false)
+
+                        </td>
+                    </tr>
+
+                </table>
+                <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: threedlightshadow;" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="left" nowrap class="auto-style5">
+                            End Time:
+                        </td>
+
+                        <td align="left">
+                            @Html.ShortTime(Model.EndDateTime, "EndTime", false)
+
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+
+        </tr>
+
+    </table>
+            @*</td>
+        </tr>
+    </table>*@
+
+
+    @*<table border="0" style="float:right">
+        <tr>*@
+            <td class="auto-style17">
+                <table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; float: right; font-size: 10pt; background-color: whitesmoke; width: auto; height: 100%; ">
+                    <tr style="background-color: threeddarkshadow; color: white; "><th align="center" class="auto-style19"><b>Summary</b></th></tr>
+                    <tr>
+                        <td class="auto-style12">
+                            <table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; font-size: 10pt; background-color:whitesmoke; width:auto; ">
+                                <tr style="background-color: lightgoldenrodyellow; color: black">
+                                    <th class="auto-style20">Start</th>
+                                    <th class="auto-style20">End</th>
+                                    <th class="auto-style21">Description</th>
+                                </tr>
+
+                                <tr>
+                                    <td>@Html.ShortTime(Model.StartDateTime, "StartTimeDisp", false)                   </td>
+                                    <td>@Html.ShortTime(Model.EndDateTime, "EndTimeDisp", false)                    </td>
+                                    @*<td>@Html.DisplayFor(model => model.EventName) ----- @Html.DisplayFor(model => model.Aim)                  </td>*@
+                                    <td> @Html.EventDescription(Model.EventName, "EventTimeDisp", Model.Aim) </td>
+
+                                </tr>
+                            </table>
+                    </tr>
+                </table>
+            </td>
+        @*</tr>
+    </table>*@
+
+
+    <table border="0">
+        <tr>
+            <td class="auto-style15">
+                <table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; font-size: 10pt; background-color:whitesmoke; width:100%;">
+                    <tr style="background-color:threeddarkshadow;color:white"><th align="center"><b>Event Details</b></th></tr>
+                    <tr>
+                        <td class="auto-style14">
+                            <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: threedlightshadow;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" nowrap class="auto-style5">
+                                        @Html.DisplayNameFor(model => model.EventName):
+                                    </td>
+
+                                    <td align="left">
+                                        @Html.DisplayFor(model => model.EventName)
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: whitesmoke;" cellspacing="0" cellpadding="0">
+                                @*<tr>
+                                    <td align="left" nowrap class="auto-style5">
+                                        @Html.DisplayNameFor(model => model.EventType):
+                                    </td>
+
+                                    <td align="left">
+                                        @Html.DisplayFor(model => model.EventType)
+                                    </td>
+                                </tr>*@
+                                <tr>
+                                    <td align="left" class="auto-style5" width="auto">
+                                        @Html.DisplayNameFor(model => model.EventType):
+                                    </td>
+                                    <td align="left" width="auto">
+                                        @Html.DisplayFor(model => model.EventType)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="OrganisationTitle" class="auto-style5" width="auto">
+                                        @Html.DisplayNameFor(model => model.Organisation):
+                                    </td>
+                                    <td width="auto">
+                                         @Html.DisplayFor(model => model.Organisation)
+                                    </td>
+
+                                </tr>
+                            </table>
+                            <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: threedlightshadow;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" nowrap class="auto-style5">
+                                        @Html.DisplayNameFor(model => model.Location):
+                                    </td>
+
+                                    <td align="left">
+                                        @Html.DisplayFor(model => model.Location)
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: whitesmoke;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" nowrap class="auto-style5">
+                                        @Html.DisplayNameFor(model => model.NumOfPeople):
+                                    </td>
+
+                                    <td align="left">
+                                        @Html.DisplayFor(model => model.NumOfPeople)
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: threedlightshadow;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" nowrap class="auto-style5">
+                                        @Html.DisplayNameFor(model => model.StaffContact):
+                                    </td>
+
+                                    <td align="left">
+                                        @Html.DisplayFor(model => model.StaffContact)
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: whitesmoke;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" nowrap class="auto-style5">
+                                        @Html.DisplayNameFor(model => model.Aim):
+                                    </td>
+
+                                    <td align="left">
+                                        @Html.DisplayFor(model => model.Aim)
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: threedlightshadow;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" nowrap class="auto-style5">
+                                        @Html.DisplayNameFor(model => model.TargetAudience):
+                                    </td>
+
+                                    <td align="left">
+                                        @Html.DisplayFor(model => model.TargetAudience)
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: whitesmoke;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" nowrap class="auto-style5">
+                                        @Html.DisplayNameFor(model => model.OrganisationContact):
+                                    </td>
+
+                                    <td align="left">
+                                        @Html.DisplayFor(model => model.OrganisationContact)
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table border="0">
+        <tr>
+            <td class="auto-style15">
+                <table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; font-size: 10pt; background-color:whitesmoke; width:100%;">
+                    <tr style="background-color:threeddarkshadow;color:white;"><th align="center"><b>Additional info Details</b></th></tr>
+                    <tr>
+                        <td class="auto-style14">
+                            <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: whitesmoke;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" nowrap class="auto-style5">
+                                        @Html.DisplayNameFor(model => model.Comments):
+                                    </td>
+
+                                    <td align="left">
+                                        @Html.DisplayFor(model => model.Comments)
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table border="0">
+        <tr>
+            <td class="auto-style15">
+                <table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; font-size: 10pt; background-color:whitesmoke; width:100%;">
+                    <tr style="background-color:threeddarkshadow;color:white"><th align="center"><b>Event feedback</b></th></tr>
+                    <tr>
+                        <td class="auto-style14">
+                            <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: whitesmoke;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" nowrap class="auto-style5">
+                                        @Html.DisplayNameFor(model => model.Feedback):
+                                    </td>
+
+                                    <td align="left">
+                                        @Html.DisplayFor(model => model.Feedback)
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table border="0">
+        <tr>
+            <td class="auto-style15">
+                <table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; font-size: 10pt; background-color:whitesmoke; width:100%;">
+                    <tr style="background-color:threeddarkshadow;color:white"><th align="center"><b>Attachments</b></th></tr>
+                    <tr>
+                        <td class="auto-style14">
+                            <table border="0" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: whitesmoke;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    @*<td align="left" nowrap class="auto-style5">
+                                            @Html.DisplayNameFor(model => model.Attachments):
+                                        </td>*@
+
+                                    <td align="left">
+                                        @Html.RichTextAreaFor("Attachments", Model.Attachments, true)
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <div>
+        @section DocumentLog
+{
+            <table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: threedlightshadow;">
+                <tr>
+                    <td align="left" nowrap class="auto-style14">
+                        Record modified by @Model.DocumentModifiedBy on @Model.DocumentDateModified
+                    </td>
+                </tr>
+            </table>
+
+            <table border="1" cellspacing="0" cellpadding="4" style="font-family: Arial; font-size: 10pt; width: 100%; background-color: threedlightshadow;">
+                <tr>
+                    <td align="left" nowrap class="auto-style14">
+                        Record created by @Model.DocumentCreatedBy on @Model.DocumentDateCreated
+                    </td>
+                </tr>
+            </table>
+        }
+
+    </div>
+
+}

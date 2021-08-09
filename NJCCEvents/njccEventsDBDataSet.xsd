@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="njccEventsDBDataSet" targetNamespace="http://tempuri.org/njccEventsDBDataSet.xsd" xmlns:mstns="http://tempuri.org/njccEventsDBDataSet.xsd" xmlns="http://tempuri.org/njccEventsDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DefaultConnection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DefaultConnection (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DefaultConnection.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EventDocumentsTableAdapter" GeneratorDataComponentClassName="EventDocumentsTableAdapter" Name="EventDocuments" UserDataComponentName="EventDocumentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DefaultConnection (Web.config)" DbObjectName="njccEventsDB.dbo.EventDocuments" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT StartDateTime, EndDateTime, EventName, EventType, Organisation, Location, NumOfPeople, StaffContact, Aim, TargetAudience, OrganisationContact FROM dbo.EventDocuments</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="StartDateTime" DataSetColumn="StartDateTime" />
+              <Mapping SourceColumn="EndDateTime" DataSetColumn="EndDateTime" />
+              <Mapping SourceColumn="EventName" DataSetColumn="EventName" />
+              <Mapping SourceColumn="EventType" DataSetColumn="EventType" />
+              <Mapping SourceColumn="Organisation" DataSetColumn="Organisation" />
+              <Mapping SourceColumn="Location" DataSetColumn="Location" />
+              <Mapping SourceColumn="NumOfPeople" DataSetColumn="NumOfPeople" />
+              <Mapping SourceColumn="StaffContact" DataSetColumn="StaffContact" />
+              <Mapping SourceColumn="Aim" DataSetColumn="Aim" />
+              <Mapping SourceColumn="TargetAudience" DataSetColumn="TargetAudience" />
+              <Mapping SourceColumn="OrganisationContact" DataSetColumn="OrganisationContact" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="njccEventsDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="njccEventsDBDataSet" msprop:Generator_UserDSName="njccEventsDBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EventDocuments" msprop:Generator_TableClassName="EventDocumentsDataTable" msprop:Generator_TableVarName="tableEventDocuments" msprop:Generator_TablePropName="EventDocuments" msprop:Generator_RowDeletingName="EventDocumentsRowDeleting" msprop:Generator_RowChangingName="EventDocumentsRowChanging" msprop:Generator_RowEvHandlerName="EventDocumentsRowChangeEventHandler" msprop:Generator_RowDeletedName="EventDocumentsRowDeleted" msprop:Generator_UserTableName="EventDocuments" msprop:Generator_RowChangedName="EventDocumentsRowChanged" msprop:Generator_RowEvArgName="EventDocumentsRowChangeEvent" msprop:Generator_RowClassName="EventDocumentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StartDateTime" msprop:Generator_ColumnVarNameInTable="columnStartDateTime" msprop:Generator_ColumnPropNameInRow="StartDateTime" msprop:Generator_ColumnPropNameInTable="StartDateTimeColumn" msprop:Generator_UserColumnName="StartDateTime" type="xs:dateTime" />
+              <xs:element name="EndDateTime" msprop:Generator_ColumnVarNameInTable="columnEndDateTime" msprop:Generator_ColumnPropNameInRow="EndDateTime" msprop:Generator_ColumnPropNameInTable="EndDateTimeColumn" msprop:Generator_UserColumnName="EndDateTime" type="xs:dateTime" />
+              <xs:element name="EventName" msprop:Generator_ColumnVarNameInTable="columnEventName" msprop:Generator_ColumnPropNameInRow="EventName" msprop:Generator_ColumnPropNameInTable="EventNameColumn" msprop:Generator_UserColumnName="EventName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EventType" msprop:Generator_ColumnVarNameInTable="columnEventType" msprop:Generator_ColumnPropNameInRow="EventType" msprop:Generator_ColumnPropNameInTable="EventTypeColumn" msprop:Generator_UserColumnName="EventType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Organisation" msprop:Generator_ColumnVarNameInTable="columnOrganisation" msprop:Generator_ColumnPropNameInRow="Organisation" msprop:Generator_ColumnPropNameInTable="OrganisationColumn" msprop:Generator_UserColumnName="Organisation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Location" msprop:Generator_ColumnVarNameInTable="columnLocation" msprop:Generator_ColumnPropNameInRow="Location" msprop:Generator_ColumnPropNameInTable="LocationColumn" msprop:Generator_UserColumnName="Location">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumOfPeople" msprop:Generator_ColumnVarNameInTable="columnNumOfPeople" msprop:Generator_ColumnPropNameInRow="NumOfPeople" msprop:Generator_ColumnPropNameInTable="NumOfPeopleColumn" msprop:Generator_UserColumnName="NumOfPeople" type="xs:int" />
+              <xs:element name="StaffContact" msprop:Generator_ColumnVarNameInTable="columnStaffContact" msprop:Generator_ColumnPropNameInRow="StaffContact" msprop:Generator_ColumnPropNameInTable="StaffContactColumn" msprop:Generator_UserColumnName="StaffContact">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Aim" msprop:Generator_ColumnVarNameInTable="columnAim" msprop:Generator_ColumnPropNameInRow="Aim" msprop:Generator_ColumnPropNameInTable="AimColumn" msprop:Generator_UserColumnName="Aim" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TargetAudience" msprop:Generator_ColumnVarNameInTable="columnTargetAudience" msprop:Generator_ColumnPropNameInRow="TargetAudience" msprop:Generator_ColumnPropNameInTable="TargetAudienceColumn" msprop:Generator_UserColumnName="TargetAudience" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrganisationContact" msprop:Generator_ColumnVarNameInTable="columnOrganisationContact" msprop:Generator_ColumnPropNameInRow="OrganisationContact" msprop:Generator_ColumnPropNameInTable="OrganisationContactColumn" msprop:Generator_UserColumnName="OrganisationContact">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

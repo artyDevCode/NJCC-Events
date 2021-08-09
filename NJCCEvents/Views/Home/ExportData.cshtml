@@ -1,0 +1,9 @@
+﻿@model NJCCEvents.Models.Reports
+
+@{
+    ViewBag.Title = "ExportData";
+}
+
+<h2>ExportData</h2>
+
+@Html.ReportViewer(ViewBag.ReportViewer as Microsoft.Reporting.WebForms.ReportViewer)

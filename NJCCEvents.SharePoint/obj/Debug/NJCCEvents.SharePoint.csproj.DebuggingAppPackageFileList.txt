@@ -1,0 +1,1 @@
+C:\C#Development\Projects\NJCC Events\NJCCEvents\NJCCEvents.SharePoint\bin\Debug\NJCCEvents.SharePoint.debugapp
